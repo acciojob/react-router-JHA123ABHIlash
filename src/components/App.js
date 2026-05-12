@@ -1,11 +1,19 @@
 
 import React from "react";
 import './../styles/App.css';
+import { Switch,Route } from "react-router-dom";
+import Navigation from "./Navigation";
+import Home from './Home'
+import About from './About'
 
 const App = () => {
   return (
     <div>
-        {/* Do not remove the main div */}
+      <Navigation/>
+        <Switch>
+          <Route exact path='/' component={Home}/>
+          <Route  path='/about' component={About}/>
+        </Switch>
     </div>
   )
 }
